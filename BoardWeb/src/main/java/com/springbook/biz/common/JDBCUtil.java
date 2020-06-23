@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 
 public class JDBCUtil {
-	private static String dburl = "jdbc:mysql://localhost:3306/connectdb";
+	private static String dburl = "jdbc:mysql://localhost:3306/connectdb?useUnicode=true&characterEncoding=utf8";
 	private static String dbUser = "connectuser";
 	private static String dbpasswd = "connect123!@#";
 	public static Connection getConnection() {

@@ -3,12 +3,4 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<sevlet>
-		<servlet-name>hello</servlet-name>
-		<servlet-class>hello.Helloservlet</servlet-class>
-	</sevlet>
-	<servlet-mapping>
-		<servlet-name>hello</servlet-name>
-		<url-mapping>/hello.do</url-mapping>
-	</servlet-mapping>
 </web-app>
