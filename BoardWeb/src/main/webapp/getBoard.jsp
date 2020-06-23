@@ -17,27 +17,27 @@
 <a href="logout_proc.jsp">Log_out</a>
 <hr>
 <form action="updateBoard.do" method="post">
-<input name="seq" type="hidden" value="<%= board.getSeq() %>"/>
+<input name="seq" type="hidden" value="${board.seq }"/>
 	<table board="1" cellpadding="0" cellspacing="0">
 		<tr>
 			<td bgcolor="orange" width="70">제목</td>
-			<td aligh="left"><input name="title" type="text" value="<%= board.getTitle() %>"/></td>
+			<td aligh="left"><input name="title" type="text" value="${ board.title}"/></td>
 		</tr>
 		<tr>
 			<td bgcolor="orange" >작성자</td>
-			<td aligh="left"><%= board.getWriter() %></td>
+			<td aligh="left">${board.writer }</td>
 		</tr>
 		<tr>
 			<td bgcolor="orange" >내용</td>
-			<td aligh="left"><textarea name = "content" cols="40" rows="10"><%=board.getContent() %></textarea></td>
+			<td aligh="left"><textarea name = "content" cols="40" rows="10">${board.content }</textarea></td>
 		</tr>
 		<tr>
 			<td bgcolor="orange" >등록일</td>
-			<td aligh="left"><%= board.getRegDate() %></td>
+			<td aligh="left">${board.regDate }</td>
 		</tr>
 		<tr>
 			<td bgcolor="orange" >조회수</td>
-			<td aligh="left"><%= board.getCnt() %></td>
+			<td aligh="left">${board.cnt }</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
@@ -47,7 +47,7 @@
 </form>
 <hr>
 <a href="insertBoard.jsp">글등록</a>&nbsp;&nbsp;&nbsp;
-<a href = "deleteBoard.do?seq=<%=board.getSeq() %>">글삭제</a>&nbsp;&nbsp;&nbsp;
+<a href = "deleteBoard.do?seq=${board.seq }">글삭제</a>&nbsp;&nbsp;&nbsp;
 <a href = "getBoardList.do">글목록</a>
 </center>
 </body>
