@@ -6,10 +6,7 @@
 <%@page import="com.springbook.biz.board.BoardVO"%>
 
 <%
-	BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO>boardList = boardDAO.getBoardList(vo);
-	
+	List<BoardVO>boardList = (List)session.getAttribute("boardList");	
 %>
 
 <!DOCTYPE html>
@@ -21,7 +18,7 @@
 <body>
 <center>
 	<h1>글 목록</h1>
-	<h3>테스트님 환영합니다....<a href="logout_proc.jsp>Log-out">Log-out</a></h3>
+	<h3>테스트님 환영합니다....<a href="logout.do>Log-out">Log-out</a></h3>
 	<form action="getBoardist.jsp" method="post">
 	<table border="1" cellpadding="0" cellspacing="0" width="700">
 		<tr>
@@ -29,7 +26,7 @@
 				<select name="searchCondition">
 					<option value="TITLE">제목
 					<option value="CONTENT">내용
-				</select>
+				</select>	
 				<input name="searchKeyword" type="text"/>
 				<input type="submit" value="검색"/>
 			</td>
@@ -48,7 +45,8 @@
 	<% for(BoardVO board : boardList){ %>
 	<tr>
 		<td><%= board.getSeq() %></td>
-		<td><%= board.getTitle() %></td>
+		<td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>">
+						<%= board.getTitle() %></a></td>
 		<td><%= board.getWriter() %></td>
 		<td><%= board.getRegDate() %></td>
 		<td><%= board.getCnt() %></td>
